@@ -23,6 +23,7 @@ public class ExamenRecursivo {
     public static void sumaArregloRecursiva(int [] arreglo){
         int resultado = sumaInternaRecursiva(arreglo.length-1, 0, arreglo);
         System.out.println("");
+        System.out.println("El resultado del ejercicio 1: ");
         System.out.println("");
         System.out.println("La suma del arreglo es: "+ resultado);
     }
@@ -49,10 +50,10 @@ public class ExamenRecursivo {
         System.out.print("Ingresa el tamaño del arreglo: ");
         int tamaño = scanner.nextInt();
         int[] arreglo = new int[tamaño];
-         // Llamada inicial a la función recursiva para llenar el arreglo
+         //Llamada inicial a la función recursiva para llenar el arreglo
         llenarArreglo(scanner, arreglo, 0);
         
-        // Llamada a la función recursiva para mostrar el arreglo
+        //Llamada a la función recursiva para mostrar el arreglo
         System.out.println("");
         System.out.println("El arreglo es:");
         mostrarArreglo(arreglo, 0);
@@ -65,13 +66,44 @@ public class ExamenRecursivo {
     public static void ejercicio2(){
         ListaCircular lista = new ListaCircular();
         System.out.println("");
-        System.out.println("Resultado ejercicio 2");
+        System.out.println("Resultado ejercicio 2: ");
         System.out.println("");
         lista.agregar("hola");
         lista.agregar("argentina");
         lista.agregar("es");
         lista.agregar("campeon");
         lista.imprimirLista();
+        System.out.println("");
+    }
+    
+    public static void ingresarValoresEjercicio3(){
+        System.out.println("");
+        System.out.println("El ejercicio 3: 1");
+        System.out.println("");
+        System.out.println("Ingrese la cantidad de valores que desea ingresar: ");
+        int tamaño = scanner.nextInt();
+        Pila pila = new Pila();
+        pila = ingresarValor(0, tamaño, pila);
+        System.out.println("El resultado del ejercicio 3: ");
+        System.out.println("");
+        pila.imprimirInvertido();
+    }
+    
+    public static Pila ingresarValor(int i, int tamaño, Pila pila){
+        if(i < tamaño){
+            System.out.println("Ingrese el valor: ");
+            String valor = scanner.next();
+            pila.apilar(valor);
+            return ingresarValor(i+1, tamaño, pila);
+        }
+        else{
+            return pila;
+        }
+    }
+    
+    public static void ejercicio3(){
+        
+        ingresarValoresEjercicio3();
     }
     
     
@@ -82,6 +114,7 @@ public class ExamenRecursivo {
         // TODO code application logic here
         ingresarArreglo();
         ejercicio2();
+        ejercicio3();
         
     }
     
