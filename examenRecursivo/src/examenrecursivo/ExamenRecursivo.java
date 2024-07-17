@@ -58,13 +58,30 @@ public class ExamenRecursivo {
         mostrarArreglo(arreglo, 0);
         sumaArregloRecursiva(arreglo);
     }
+    
+    
+    //2 ejercicio 
+    
+    public static void ejercicio2(){
+        ListaCircular lista = new ListaCircular();
+        System.out.println("");
+        System.out.println("Resultado ejercicio 2");
+        System.out.println("");
+        lista.agregar("hola");
+        lista.agregar("argentina");
+        lista.agregar("es");
+        lista.agregar("campeon");
+        lista.imprimirLista();
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
         ingresarArreglo();
-        
+        ejercicio2();
         
     }
     
