@@ -107,14 +107,69 @@ public class ExamenRecursivo {
     }
     
     
+    public static int potencia(int b, int c){
+        return calculoPotencia(b, c, 0, 1);
+    }
+    
+    private static int calculoPotencia(int b, int c, int i, int total){
+        if(i < c){
+            total *= b;
+            return calculoPotencia(b, c, i+1, total);
+        }
+        else{
+            return total;
+        }
+    }
+    
+    public static int factorial(int a){
+        return calculoFactorial(a, 1,1);
+    }
+    
+    private static int calculoFactorial(int a, int i, int total){
+        if(i <= a){
+            total *= i;
+            return calculoFactorial(a, i+1, total);
+        }
+        else{
+            return total;
+        }
+    }
+            
+    public static int multiplicacion(int a, int b){
+        return a * b;
+    }
+    
+    
+    public static void ejercicio4(){
+        System.out.println("");
+        System.out.println("Ejercicio 4:");
+        System.out.println("Ingrese el numero para sacarle el factorial: ");
+        int factorial = scanner.nextInt(); 
+        System.out.println("Ingrese el numero base para calcular");
+        int base = scanner.nextInt();
+        System.out.println("Ingrese el numero de la potencia para calcular");
+        int potencia = scanner.nextInt();
+        
+        int a = factorial(factorial);
+        System.out.println("El valor de A (numero factorial) de " + factorial + " es "+ a);
+        int b = potencia(base, potencia);
+        System.out.println("El valor de B (base) " + base + "(potencia) " + potencia + "es " +b);
+        System.out.println("Resultado:");
+        System.out.println("A * B: " +multiplicacion(a, b));
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        
         ingresarArreglo();
         ejercicio2();
         ejercicio3();
+        ejercicio4();
         
     }
     
