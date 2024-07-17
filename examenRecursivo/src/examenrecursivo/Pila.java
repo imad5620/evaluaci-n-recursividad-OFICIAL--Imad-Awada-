@@ -50,8 +50,11 @@ public class Pila {
         if (nodo == null) {
             return;
         }
+        
         imprimirInvertidoRecursivo(nodo.siguiente);
         System.out.print(nodo.valor + " ");
+        //ya que no es necesario guardar el valor
+        nodo = null;
     }
     
     public String desapilar() {
